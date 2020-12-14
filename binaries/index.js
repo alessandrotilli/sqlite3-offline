@@ -9,7 +9,7 @@ const ELECTRON = process.versions.electron
 
 var NAME
 if (ELECTRON) {
-  const MINOR_RELEASE = ELECTRON.match(/\d\.\d/)[0]
+  const MINOR_RELEASE = ELECTRON.match(/\d+\.\d+/)[0]
   if (!MINOR_RELEASE) throw new Error('Electron', ELECTRON, 'release not supported')
   NAME = `electron-v${MINOR_RELEASE}-${PLATFORM}-${ARCH}`
 } else NAME = `node-v${MODULES}-${PLATFORM}-${ARCH}`
